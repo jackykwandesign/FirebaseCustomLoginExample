@@ -169,11 +169,17 @@ function Login() {
     }
     return (
         <div>
-            <input value={email} onChange={e=> setEmail(e.currentTarget.value)}/>
-            <input value={password} onChange={e=> setPassword(e.currentTarget.value)}/>
+            Email: <input value={email} onChange={e=> setEmail(e.currentTarget.value)}/>
+            <br />
+            Password: <input value={password} onChange={e=> setPassword(e.currentTarget.value)}/>
+            <br />
             <button onClick={() => handleCreateUserWithEmailAndPassword(auth, email, password)}>SignUp</button>
             <button onClick={() => handleSignInWithEmailAndPassword(auth, email, password)}>SignIn</button>
-            <button onClick={() => handleSendSignInLinkToEmail(auth, email)}>MagicLink</button>
+            <button onClick={() => handleSendSignInLinkToEmail(auth, email)}>MagicLink (No need password)</button>
+            <br />
+            <br />
+            <br />
+            SSO SignIn
             <br />
             <button onClick={() => handleSignInwithPopup(auth, FirebaseProvider.GOOGLE)}>Google</button>
             <button onClick={() => handleSignInwithPopup(auth, FirebaseProvider.FACEBOOK)}>Facebook</button>
